@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateProveedoresTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_idProveedor}" for="idProveedor" />
+                    <h:inputText id="idProveedor" value="#{proveedoresController.selected.idProveedor}" title="#{bundle.CreateProveedoresTitle_idProveedor}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_idProveedor}"/>
+                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_nit}" for="nit" />
+                    <h:inputText id="nit" value="#{proveedoresController.selected.nit}" title="#{bundle.CreateProveedoresTitle_nit}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_nit}"/>
+                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_razonSocial}" for="razonSocial" />
+                    <h:inputText id="razonSocial" value="#{proveedoresController.selected.razonSocial}" title="#{bundle.CreateProveedoresTitle_razonSocial}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_razonSocial}"/>
+                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_idPersona}" for="idPersona" />
+                    <h:selectOneMenu id="idPersona" value="#{proveedoresController.selected.idPersona}" title="#{bundle.CreateProveedoresTitle_idPersona}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_idPersona}">
+                        <f:selectItems value="#{personasController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{proveedoresController.create}" value="#{bundle.CreateProveedoresSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{proveedoresController.prepareList}" value="#{bundle.CreateProveedoresShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateProveedoresIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

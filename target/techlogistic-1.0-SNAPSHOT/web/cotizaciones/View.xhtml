@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewCotizacionesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewCotizacionesLabel_codigoCotizacion}"/>
+                    <h:outputText value="#{cotizacionesController.selected.codigoCotizacion}" title="#{bundle.ViewCotizacionesTitle_codigoCotizacion}"/>
+                    <h:outputText value="#{bundle.ViewCotizacionesLabel_tipoCotizacion}"/>
+                    <h:outputText value="#{cotizacionesController.selected.tipoCotizacion}" title="#{bundle.ViewCotizacionesTitle_tipoCotizacion}"/>
+                    <h:outputText value="#{bundle.ViewCotizacionesLabel_valorUnitario}"/>
+                    <h:outputText value="#{cotizacionesController.selected.valorUnitario}" title="#{bundle.ViewCotizacionesTitle_valorUnitario}"/>
+                    <h:outputText value="#{bundle.ViewCotizacionesLabel_fechaCotizacion}"/>
+                    <h:outputText value="#{cotizacionesController.selected.fechaCotizacion}" title="#{bundle.ViewCotizacionesTitle_fechaCotizacion}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewCotizacionesLabel_cantidadProducto}"/>
+                    <h:outputText value="#{cotizacionesController.selected.cantidadProducto}" title="#{bundle.ViewCotizacionesTitle_cantidadProducto}"/>
+                    <h:outputText value="#{bundle.ViewCotizacionesLabel_valorTotalCot}"/>
+                    <h:outputText value="#{cotizacionesController.selected.valorTotalCot}" title="#{bundle.ViewCotizacionesTitle_valorTotalCot}"/>
+                    <h:outputText value="#{bundle.ViewCotizacionesLabel_idCliente}"/>
+                    <h:outputText value="#{cotizacionesController.selected.idCliente}" title="#{bundle.ViewCotizacionesTitle_idCliente}"/>
+                    <h:outputText value="#{bundle.ViewCotizacionesLabel_codigoProducto}"/>
+                    <h:outputText value="#{cotizacionesController.selected.codigoProducto}" title="#{bundle.ViewCotizacionesTitle_codigoProducto}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{cotizacionesController.destroyAndView}" value="#{bundle.ViewCotizacionesDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewCotizacionesEditLink}"/>
+                <br />
+                <h:commandLink action="#{cotizacionesController.prepareCreate}" value="#{bundle.ViewCotizacionesCreateLink}" />
+                <br />
+                <h:commandLink action="#{cotizacionesController.prepareList}" value="#{bundle.ViewCotizacionesShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewCotizacionesIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

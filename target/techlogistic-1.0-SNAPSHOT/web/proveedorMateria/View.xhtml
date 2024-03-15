@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewProveedorMateriaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewProveedorMateriaLabel_idProveedorMateria}"/>
+                    <h:outputText value="#{proveedorMateriaController.selected.idProveedorMateria}" title="#{bundle.ViewProveedorMateriaTitle_idProveedorMateria}"/>
+                    <h:outputText value="#{bundle.ViewProveedorMateriaLabel_idMateriaPrima}"/>
+                    <h:outputText value="#{proveedorMateriaController.selected.idMateriaPrima}" title="#{bundle.ViewProveedorMateriaTitle_idMateriaPrima}"/>
+                    <h:outputText value="#{bundle.ViewProveedorMateriaLabel_idProveedor}"/>
+                    <h:outputText value="#{proveedorMateriaController.selected.idProveedor}" title="#{bundle.ViewProveedorMateriaTitle_idProveedor}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{proveedorMateriaController.destroyAndView}" value="#{bundle.ViewProveedorMateriaDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewProveedorMateriaEditLink}"/>
+                <br />
+                <h:commandLink action="#{proveedorMateriaController.prepareCreate}" value="#{bundle.ViewProveedorMateriaCreateLink}" />
+                <br />
+                <h:commandLink action="#{proveedorMateriaController.prepareList}" value="#{bundle.ViewProveedorMateriaShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewProveedorMateriaIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

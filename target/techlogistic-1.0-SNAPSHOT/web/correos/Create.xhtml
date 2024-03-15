@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateCorreosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateCorreosLabel_idCorreo}" for="idCorreo" />
+                    <h:inputText id="idCorreo" value="#{correosController.selected.idCorreo}" title="#{bundle.CreateCorreosTitle_idCorreo}" required="true" requiredMessage="#{bundle.CreateCorreosRequiredMessage_idCorreo}"/>
+                    <h:outputLabel value="#{bundle.CreateCorreosLabel_correo}" for="correo" />
+                    <h:inputText id="correo" value="#{correosController.selected.correo}" title="#{bundle.CreateCorreosTitle_correo}" required="true" requiredMessage="#{bundle.CreateCorreosRequiredMessage_correo}"/>
+                    <h:outputLabel value="#{bundle.CreateCorreosLabel_password}" for="password" />
+                    <h:inputText id="password" value="#{correosController.selected.password}" title="#{bundle.CreateCorreosTitle_password}" required="true" requiredMessage="#{bundle.CreateCorreosRequiredMessage_password}"/>
+                    <h:outputLabel value="#{bundle.CreateCorreosLabel_idPersona}" for="idPersona" />
+                    <h:selectOneMenu id="idPersona" value="#{correosController.selected.idPersona}" title="#{bundle.CreateCorreosTitle_idPersona}" required="true" requiredMessage="#{bundle.CreateCorreosRequiredMessage_idPersona}">
+                        <f:selectItems value="#{personasController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{correosController.create}" value="#{bundle.CreateCorreosSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{correosController.prepareList}" value="#{bundle.CreateCorreosShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateCorreosIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListProveedorMateriaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListProveedorMateriaEmpty}" rendered="#{proveedorMateriaController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{proveedorMateriaController.items.rowCount > 0}">
+                    <h:outputText value="#{proveedorMateriaController.pagination.pageFirstItem + 1}..#{proveedorMateriaController.pagination.pageLastItem + 1}/#{proveedorMateriaController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{proveedorMateriaController.previous}" value="#{bundle.Previous} #{proveedorMateriaController.pagination.pageSize}" rendered="#{proveedorMateriaController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{proveedorMateriaController.next}" value="#{bundle.Next} #{proveedorMateriaController.pagination.pageSize}" rendered="#{proveedorMateriaController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{proveedorMateriaController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProveedorMateriaTitle_idProveedorMateria}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idProveedorMateria}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProveedorMateriaTitle_idMateriaPrima}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idMateriaPrima}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProveedorMateriaTitle_idProveedor}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idProveedor}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{proveedorMateriaController.prepareView}" value="#{bundle.ListProveedorMateriaViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{proveedorMateriaController.prepareEdit}" value="#{bundle.ListProveedorMateriaEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{proveedorMateriaController.destroy}" value="#{bundle.ListProveedorMateriaDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{proveedorMateriaController.prepareCreate}" value="#{bundle.ListProveedorMateriaCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListProveedorMateriaIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

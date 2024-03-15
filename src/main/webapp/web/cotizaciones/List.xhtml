@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListCotizacionesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListCotizacionesEmpty}" rendered="#{cotizacionesController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{cotizacionesController.items.rowCount > 0}">
+                    <h:outputText value="#{cotizacionesController.pagination.pageFirstItem + 1}..#{cotizacionesController.pagination.pageLastItem + 1}/#{cotizacionesController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{cotizacionesController.previous}" value="#{bundle.Previous} #{cotizacionesController.pagination.pageSize}" rendered="#{cotizacionesController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{cotizacionesController.next}" value="#{bundle.Next} #{cotizacionesController.pagination.pageSize}" rendered="#{cotizacionesController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{cotizacionesController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCotizacionesTitle_codigoCotizacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codigoCotizacion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCotizacionesTitle_tipoCotizacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipoCotizacion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCotizacionesTitle_valorUnitario}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.valorUnitario}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCotizacionesTitle_fechaCotizacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechaCotizacion}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCotizacionesTitle_cantidadProducto}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cantidadProducto}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCotizacionesTitle_valorTotalCot}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.valorTotalCot}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCotizacionesTitle_idCliente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idCliente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCotizacionesTitle_codigoProducto}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codigoProducto}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{cotizacionesController.prepareView}" value="#{bundle.ListCotizacionesViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{cotizacionesController.prepareEdit}" value="#{bundle.ListCotizacionesEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{cotizacionesController.destroy}" value="#{bundle.ListCotizacionesDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{cotizacionesController.prepareCreate}" value="#{bundle.ListCotizacionesCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListCotizacionesIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

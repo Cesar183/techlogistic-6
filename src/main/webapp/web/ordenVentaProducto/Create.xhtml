@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateOrdenVentaProductoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateOrdenVentaProductoLabel_idFacturaProducto}" for="idFacturaProducto" />
+                    <h:inputText id="idFacturaProducto" value="#{ordenVentaProductoController.selected.idFacturaProducto}" title="#{bundle.CreateOrdenVentaProductoTitle_idFacturaProducto}" required="true" requiredMessage="#{bundle.CreateOrdenVentaProductoRequiredMessage_idFacturaProducto}"/>
+                    <h:outputLabel value="#{bundle.CreateOrdenVentaProductoLabel_numeroOrdenVenta}" for="numeroOrdenVenta" />
+                    <h:selectOneMenu id="numeroOrdenVenta" value="#{ordenVentaProductoController.selected.numeroOrdenVenta}" title="#{bundle.CreateOrdenVentaProductoTitle_numeroOrdenVenta}" required="true" requiredMessage="#{bundle.CreateOrdenVentaProductoRequiredMessage_numeroOrdenVenta}">
+                        <f:selectItems value="#{ordenVentaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateOrdenVentaProductoLabel_codigoProducto}" for="codigoProducto" />
+                    <h:selectOneMenu id="codigoProducto" value="#{ordenVentaProductoController.selected.codigoProducto}" title="#{bundle.CreateOrdenVentaProductoTitle_codigoProducto}" required="true" requiredMessage="#{bundle.CreateOrdenVentaProductoRequiredMessage_codigoProducto}">
+                        <f:selectItems value="#{productoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{ordenVentaProductoController.create}" value="#{bundle.CreateOrdenVentaProductoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{ordenVentaProductoController.prepareList}" value="#{bundle.CreateOrdenVentaProductoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateOrdenVentaProductoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditMateriaProductoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditMateriaProductoLabel_idMateriaProducto}" for="idMateriaProducto" />
+                    <h:inputText id="idMateriaProducto" value="#{materiaProductoController.selected.idMateriaProducto}" title="#{bundle.EditMateriaProductoTitle_idMateriaProducto}" required="true" requiredMessage="#{bundle.EditMateriaProductoRequiredMessage_idMateriaProducto}"/>
+                    <h:outputLabel value="#{bundle.EditMateriaProductoLabel_gastoMateriaPrima}" for="gastoMateriaPrima" />
+                    <h:inputText id="gastoMateriaPrima" value="#{materiaProductoController.selected.gastoMateriaPrima}" title="#{bundle.EditMateriaProductoTitle_gastoMateriaPrima}" required="true" requiredMessage="#{bundle.EditMateriaProductoRequiredMessage_gastoMateriaPrima}"/>
+                    <h:outputLabel value="#{bundle.EditMateriaProductoLabel_idMateriaPrima}" for="idMateriaPrima" />
+                    <h:selectOneMenu id="idMateriaPrima" value="#{materiaProductoController.selected.idMateriaPrima}" title="#{bundle.EditMateriaProductoTitle_idMateriaPrima}" required="true" requiredMessage="#{bundle.EditMateriaProductoRequiredMessage_idMateriaPrima}">
+                        <f:selectItems value="#{materiaPrimaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditMateriaProductoLabel_codigoProducto}" for="codigoProducto" />
+                    <h:selectOneMenu id="codigoProducto" value="#{materiaProductoController.selected.codigoProducto}" title="#{bundle.EditMateriaProductoTitle_codigoProducto}" required="true" requiredMessage="#{bundle.EditMateriaProductoRequiredMessage_codigoProducto}">
+                        <f:selectItems value="#{productoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{materiaProductoController.update}" value="#{bundle.EditMateriaProductoSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditMateriaProductoViewLink}"/>
+                <br />
+                <h:commandLink action="#{materiaProductoController.prepareList}" value="#{bundle.EditMateriaProductoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditMateriaProductoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

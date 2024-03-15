@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewDireccionesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewDireccionesLabel_idDireccion}"/>
+                    <h:outputText value="#{direccionesController.selected.idDireccion}" title="#{bundle.ViewDireccionesTitle_idDireccion}"/>
+                    <h:outputText value="#{bundle.ViewDireccionesLabel_tipoVia}"/>
+                    <h:outputText value="#{direccionesController.selected.tipoVia}" title="#{bundle.ViewDireccionesTitle_tipoVia}"/>
+                    <h:outputText value="#{bundle.ViewDireccionesLabel_numeroVia}"/>
+                    <h:outputText value="#{direccionesController.selected.numeroVia}" title="#{bundle.ViewDireccionesTitle_numeroVia}"/>
+                    <h:outputText value="#{bundle.ViewDireccionesLabel_prefijo}"/>
+                    <h:outputText value="#{direccionesController.selected.prefijo}" title="#{bundle.ViewDireccionesTitle_prefijo}"/>
+                    <h:outputText value="#{bundle.ViewDireccionesLabel_numViaVeneradora}"/>
+                    <h:outputText value="#{direccionesController.selected.numViaVeneradora}" title="#{bundle.ViewDireccionesTitle_numViaVeneradora}"/>
+                    <h:outputText value="#{bundle.ViewDireccionesLabel_prefijoViaGeneradora}"/>
+                    <h:outputText value="#{direccionesController.selected.prefijoViaGeneradora}" title="#{bundle.ViewDireccionesTitle_prefijoViaGeneradora}"/>
+                    <h:outputText value="#{bundle.ViewDireccionesLabel_numeroPlaca}"/>
+                    <h:outputText value="#{direccionesController.selected.numeroPlaca}" title="#{bundle.ViewDireccionesTitle_numeroPlaca}"/>
+                    <h:outputText value="#{bundle.ViewDireccionesLabel_barrio}"/>
+                    <h:outputText value="#{direccionesController.selected.barrio}" title="#{bundle.ViewDireccionesTitle_barrio}"/>
+                    <h:outputText value="#{bundle.ViewDireccionesLabel_ciudad}"/>
+                    <h:outputText value="#{direccionesController.selected.ciudad}" title="#{bundle.ViewDireccionesTitle_ciudad}"/>
+                    <h:outputText value="#{bundle.ViewDireccionesLabel_idPersona}"/>
+                    <h:outputText value="#{direccionesController.selected.idPersona}" title="#{bundle.ViewDireccionesTitle_idPersona}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{direccionesController.destroyAndView}" value="#{bundle.ViewDireccionesDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewDireccionesEditLink}"/>
+                <br />
+                <h:commandLink action="#{direccionesController.prepareCreate}" value="#{bundle.ViewDireccionesCreateLink}" />
+                <br />
+                <h:commandLink action="#{direccionesController.prepareList}" value="#{bundle.ViewDireccionesShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewDireccionesIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

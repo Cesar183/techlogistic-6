@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListCorreosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListCorreosEmpty}" rendered="#{correosController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{correosController.items.rowCount > 0}">
+                    <h:outputText value="#{correosController.pagination.pageFirstItem + 1}..#{correosController.pagination.pageLastItem + 1}/#{correosController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{correosController.previous}" value="#{bundle.Previous} #{correosController.pagination.pageSize}" rendered="#{correosController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{correosController.next}" value="#{bundle.Next} #{correosController.pagination.pageSize}" rendered="#{correosController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{correosController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCorreosTitle_idCorreo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idCorreo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCorreosTitle_correo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.correo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCorreosTitle_password}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.password}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCorreosTitle_idPersona}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idPersona}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{correosController.prepareView}" value="#{bundle.ListCorreosViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{correosController.prepareEdit}" value="#{bundle.ListCorreosEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{correosController.destroy}" value="#{bundle.ListCorreosDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{correosController.prepareCreate}" value="#{bundle.ListCorreosCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListCorreosIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

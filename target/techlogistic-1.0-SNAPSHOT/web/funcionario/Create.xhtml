@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateFuncionarioTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateFuncionarioLabel_idFuncionario}" for="idFuncionario" />
+                    <h:inputText id="idFuncionario" value="#{funcionarioController.selected.idFuncionario}" title="#{bundle.CreateFuncionarioTitle_idFuncionario}" required="true" requiredMessage="#{bundle.CreateFuncionarioRequiredMessage_idFuncionario}"/>
+                    <h:outputLabel value="#{bundle.CreateFuncionarioLabel_horario}" for="horario" />
+                    <h:inputText id="horario" value="#{funcionarioController.selected.horario}" title="#{bundle.CreateFuncionarioTitle_horario}" required="true" requiredMessage="#{bundle.CreateFuncionarioRequiredMessage_horario}"/>
+                    <h:outputLabel value="#{bundle.CreateFuncionarioLabel_salario}" for="salario" />
+                    <h:inputText id="salario" value="#{funcionarioController.selected.salario}" title="#{bundle.CreateFuncionarioTitle_salario}" required="true" requiredMessage="#{bundle.CreateFuncionarioRequiredMessage_salario}"/>
+                    <h:outputLabel value="#{bundle.CreateFuncionarioLabel_idPersona}" for="idPersona" />
+                    <h:selectOneMenu id="idPersona" value="#{funcionarioController.selected.idPersona}" title="#{bundle.CreateFuncionarioTitle_idPersona}" required="true" requiredMessage="#{bundle.CreateFuncionarioRequiredMessage_idPersona}">
+                        <f:selectItems value="#{personasController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateFuncionarioLabel_rolesIdRol}" for="rolesIdRol" />
+                    <h:selectOneMenu id="rolesIdRol" value="#{funcionarioController.selected.rolesIdRol}" title="#{bundle.CreateFuncionarioTitle_rolesIdRol}" required="true" requiredMessage="#{bundle.CreateFuncionarioRequiredMessage_rolesIdRol}">
+                        <f:selectItems value="#{rolesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{funcionarioController.create}" value="#{bundle.CreateFuncionarioSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{funcionarioController.prepareList}" value="#{bundle.CreateFuncionarioShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateFuncionarioIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

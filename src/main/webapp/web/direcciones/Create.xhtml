@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateDireccionesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateDireccionesLabel_idDireccion}" for="idDireccion" />
+                    <h:inputText id="idDireccion" value="#{direccionesController.selected.idDireccion}" title="#{bundle.CreateDireccionesTitle_idDireccion}" required="true" requiredMessage="#{bundle.CreateDireccionesRequiredMessage_idDireccion}"/>
+                    <h:outputLabel value="#{bundle.CreateDireccionesLabel_tipoVia}" for="tipoVia" />
+                    <h:inputText id="tipoVia" value="#{direccionesController.selected.tipoVia}" title="#{bundle.CreateDireccionesTitle_tipoVia}" required="true" requiredMessage="#{bundle.CreateDireccionesRequiredMessage_tipoVia}"/>
+                    <h:outputLabel value="#{bundle.CreateDireccionesLabel_numeroVia}" for="numeroVia" />
+                    <h:inputText id="numeroVia" value="#{direccionesController.selected.numeroVia}" title="#{bundle.CreateDireccionesTitle_numeroVia}" required="true" requiredMessage="#{bundle.CreateDireccionesRequiredMessage_numeroVia}"/>
+                    <h:outputLabel value="#{bundle.CreateDireccionesLabel_prefijo}" for="prefijo" />
+                    <h:inputText id="prefijo" value="#{direccionesController.selected.prefijo}" title="#{bundle.CreateDireccionesTitle_prefijo}" required="true" requiredMessage="#{bundle.CreateDireccionesRequiredMessage_prefijo}"/>
+                    <h:outputLabel value="#{bundle.CreateDireccionesLabel_numViaVeneradora}" for="numViaVeneradora" />
+                    <h:inputText id="numViaVeneradora" value="#{direccionesController.selected.numViaVeneradora}" title="#{bundle.CreateDireccionesTitle_numViaVeneradora}" required="true" requiredMessage="#{bundle.CreateDireccionesRequiredMessage_numViaVeneradora}"/>
+                    <h:outputLabel value="#{bundle.CreateDireccionesLabel_prefijoViaGeneradora}" for="prefijoViaGeneradora" />
+                    <h:inputText id="prefijoViaGeneradora" value="#{direccionesController.selected.prefijoViaGeneradora}" title="#{bundle.CreateDireccionesTitle_prefijoViaGeneradora}" required="true" requiredMessage="#{bundle.CreateDireccionesRequiredMessage_prefijoViaGeneradora}"/>
+                    <h:outputLabel value="#{bundle.CreateDireccionesLabel_numeroPlaca}" for="numeroPlaca" />
+                    <h:inputText id="numeroPlaca" value="#{direccionesController.selected.numeroPlaca}" title="#{bundle.CreateDireccionesTitle_numeroPlaca}" required="true" requiredMessage="#{bundle.CreateDireccionesRequiredMessage_numeroPlaca}"/>
+                    <h:outputLabel value="#{bundle.CreateDireccionesLabel_barrio}" for="barrio" />
+                    <h:inputText id="barrio" value="#{direccionesController.selected.barrio}" title="#{bundle.CreateDireccionesTitle_barrio}" required="true" requiredMessage="#{bundle.CreateDireccionesRequiredMessage_barrio}"/>
+                    <h:outputLabel value="#{bundle.CreateDireccionesLabel_ciudad}" for="ciudad" />
+                    <h:inputText id="ciudad" value="#{direccionesController.selected.ciudad}" title="#{bundle.CreateDireccionesTitle_ciudad}" required="true" requiredMessage="#{bundle.CreateDireccionesRequiredMessage_ciudad}"/>
+                    <h:outputLabel value="#{bundle.CreateDireccionesLabel_idPersona}" for="idPersona" />
+                    <h:selectOneMenu id="idPersona" value="#{direccionesController.selected.idPersona}" title="#{bundle.CreateDireccionesTitle_idPersona}" required="true" requiredMessage="#{bundle.CreateDireccionesRequiredMessage_idPersona}">
+                        <f:selectItems value="#{personasController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{direccionesController.create}" value="#{bundle.CreateDireccionesSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{direccionesController.prepareList}" value="#{bundle.CreateDireccionesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateDireccionesIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
