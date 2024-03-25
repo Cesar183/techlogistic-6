@@ -7,6 +7,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"></link>
+        <link rel="icon" href="/techlogistic/resources/favicon.png"/>
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'/>
+        <link rel="stylesheet" href="/techlogistic/resources/css/normalize.css"/>
+        <link rel="stylesheet" href="/techlogistic/resources/css/techlogistic.css"/>
         <title>Techlogistic</title>
     </head>
     <body>
@@ -22,13 +26,14 @@
         <div class="container">
             <nav class="navbar bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand">Inicio</a>
+                    <a class="navbar-brand"><img src="/techlogistic/resources/favicon.png" alt="" class="navigation__image" width="40">Techlogistic</a>
                     <form class="form-inline" action="logout.jsp">
                         <a href="datosUsuario.jsp"><i class="fa-solid fa-user"></i><%=sesion.getAttribute("correo") %></a>
                         <button class="btn btn-outline-danger my-2 my-sm-0 ml-2" type="submit">Cerrar Sesión</button>
                     </form>
                 </div>
             </nav>
+                        
             <div class="row mt-2">
                 <div class="col-sm">
                     <p><a href="/techlogistic/correo/enviarcorreo.xhtml">Enviar correo</a></p>
