@@ -48,13 +48,6 @@
                 </div>
             </div>
         </div>
-        <footer class="copyright">
-            <div class="bd-container">
-                <p>💙 © 2023 Techlogistic. Todos los derechos reservados. 💚</p>
-                <p><a href="./terminos-y-condiciones.html">Términos y Condiciones</a> · <a
-                        href="./politica-de-privacidad.html">Política de Privacidad</a></p>
-            </div>
-        </footer>
     </body>
     <%
 
@@ -81,6 +74,16 @@
             } catch (Exception e) {
                 out.print("Error: " + e.getMessage());
             }
+            finally {
+            // Cerrando los recursos
+            try {
+                if (rs != null) rs.close();
+                if (st != null) st.close();
+                if (con != null) con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
         }
 
         /*
@@ -101,4 +104,13 @@
         } catch (Exception e) {
         }*/
     %>
+    <footer>
+    <div class="copyright">
+        <div class="bd-container">
+            <p>💙 © 2023 Techlogistic. Todos los derechos reservados. 💚</p>
+            <p><a href="./terminos-y-condiciones.html">Términos y Condiciones</a> · <a
+                    href="./politica-de-privacidad.html">Política de Privacidad</a></p>
+        </div>
+    </div>
+    </footer>
 </html>
