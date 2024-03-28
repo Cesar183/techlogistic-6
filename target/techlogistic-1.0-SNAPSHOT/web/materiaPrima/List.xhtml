@@ -78,19 +78,18 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{materiaPrimaController.prepareView}" value="#{bundle.ListMateriaPrimaViewLink}"/>
+                            <h:commandLink action="#{materiaPrimaController.prepareView}" value="#{bundle.ListMateriaPrimaViewLink}" class="navegacionVer"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{materiaPrimaController.prepareEdit}" value="#{bundle.ListMateriaPrimaEditLink}"/>
+                            <h:commandLink action="#{materiaPrimaController.prepareEdit}" value="#{bundle.ListMateriaPrimaEditLink}" class="navegacionEditar"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{materiaPrimaController.destroy}" value="#{bundle.ListMateriaPrimaDestroyLink}"/>
+                            <h:commandLink action="#{materiaPrimaController.destroy}" value="#{bundle.ListMateriaPrimaDestroyLink}" class="navegacionEliminar"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{materiaPrimaController.prepareCreate}" value="#{bundle.ListMateriaPrimaCreateLink}"/>
+                <h:commandLink action="#{materiaPrimaController.prepareCreate}" value="#{bundle.ListMateriaPrimaCreateLink}" class="navigation__link"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListMateriaPrimaIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

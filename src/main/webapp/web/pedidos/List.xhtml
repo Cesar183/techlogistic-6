@@ -62,19 +62,18 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{pedidosController.prepareView}" value="#{bundle.ListPedidosViewLink}"/>
+                            <h:commandLink action="#{pedidosController.prepareView}" value="#{bundle.ListPedidosViewLink}" class="navegacionVer"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{pedidosController.prepareEdit}" value="#{bundle.ListPedidosEditLink}"/>
+                            <h:commandLink action="#{pedidosController.prepareEdit}" value="#{bundle.ListPedidosEditLink}" class="navegacionEditar"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{pedidosController.destroy}" value="#{bundle.ListPedidosDestroyLink}"/>
+                            <h:commandLink action="#{pedidosController.destroy}" value="#{bundle.ListPedidosDestroyLink}" class="navegacionEliminar"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{pedidosController.prepareCreate}" value="#{bundle.ListPedidosCreateLink}"/>
+                <h:commandLink action="#{pedidosController.prepareCreate}" value="#{bundle.ListPedidosCreateLink}" class="navigation__link"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListPedidosIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

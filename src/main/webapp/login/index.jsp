@@ -118,7 +118,7 @@
                                         final,
                                         facilitando la generación y consulta de informes de producción.</p>
                                     <div class="mt-auto">
-                                        <a href="./dashboard/produccion/indexproduccion.php" class="button">Ir a
+                                        <a href="/techlogistic/web/materiaPrima/List.xhtml" class="button">Ir a
                                             Producción</a></a>
                                     </div>
                                 </div>
@@ -134,7 +134,7 @@
                                         pedidos, y controla las
                                         devoluciones.</p>
                                     <div class="mt-auto">
-                                        <a href="./dashboard/inventario/indexinventario.php" class="button">Ir a
+                                        <a href="/techlogistic/web/producto/List.xhtml" class="button">Ir a
                                             Inventario</a></a>
                                     </div>
                                 </div>
@@ -149,7 +149,7 @@
                                         generación
                                         de facturas y cotizaciones.</p>
                                     <div class="mt-auto">
-                                        <a href="./dashboard/ventas/indexventas.php" class="button">Ir a Ventas</a></a>
+                                        <a href="/techlogistic/web/ordenVenta/List.xhtml" class="button">Ir a Ventas</a></a>
                                     </div>
                                 </div>
                             </div>
