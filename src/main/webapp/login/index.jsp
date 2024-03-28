@@ -32,13 +32,18 @@
                         <button class="btn btn-outline-danger my-2 my-sm-0 ml-2" type="submit">Cerrar Sesión</button>
                     </form>
                 </div>
-            </nav>
 
+            </nav>
+            <div class="container-fluid">
+                <ul class="navigation__list">
+                    <li><a href="#hero" class="navigation__link">Funcionarios</a></li>
+                    <li><a href="/techlogistic/correo/enviarcorreo.xhtml" class="navigation__link">Enviar correo</a></li>
+                    <li><a href="/techlogistic/grafico/grafico.xhtml" class="navigation__link">Gráfico compras</a></li>
+                    <li><a href="/techlogistic/subirdatos/cargararchivo.xhtml" class="navigation__link">Subir datos</a></li>
+                </ul>
+            </div>
             <div class="row mt-2">
                 <div class="col-sm">
-                    <p><a href="/techlogistic/correo/enviarcorreo.xhtml">Enviar correo</a></p>
-                    <p><a href="/techlogistic/grafico/grafico.xhtml">Gráfico compras</a></p>
-                    <p><a href="/techlogistic/subirdatos/cargararchivo.xhtml">Subir datos</a></p>
 
                     <p><a href="/techlogistic/web/categoriaMateria/List.xhtml">Show All CategoriaMateria Items</a></p>
                     <p><a href="/techlogistic/web/cliente/List.xhtml">Show All cliente Items</a></p>
@@ -99,7 +104,7 @@
                                         información detallada
                                         de los proveedores.</p>
                                     <div class="mt-auto">
-                                        <a href="./dashboard/proveedores/indexproveedores.php" class="button">Ir a
+                                        <a href="/techlogistic/web/proveedores/List.xhtml" class="button">Ir a
                                             proveedores</a></a>
                                     </div>
                                 </div>

@@ -10,44 +10,46 @@
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="/techlogistic/resources/css/normalize.css">
         <link rel="stylesheet" href="/techlogistic/resources/css/techlogistic.css">
+        <link rel="stylesheet" href="/techlogistic/resources/css/jsfcrud.css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
     </head>
     <body>
-        <header class="header" id="header">
-            <nav class="navigation bd-container">
-                <div class="navigation__container-logo">
-                    <a href="/techlogistic/index.xhtml" class="navigation__logo" title="Techlogistic"><img src="/techlogistic/resources/favicon.png" alt=""
-                                                                                   class="navigation__image">Techlogistic</a>
-                </div>
-                <div class="navigation__toggle" id="navigation-toggle">
-                    <i class='bx bx-menu'></i>
-                </div>
-            </nav>
-        </header>
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h4 class="title">Iniciar sesión</h3>
-                </div>
-                <div class="col-sm d-flex justify-content-center align-items-center">
+        <div class="wrapper">
+            <header class="header" id="header">
+                <nav class="navigation bd-container">
+                    <div class="navigation__container-logo">
+                        <a href="/techlogistic/index.xhtml" class="navigation__logo" title="Techlogistic"><img src="/techlogistic/resources/favicon.png" alt=""
+                                                                                                               class="navigation__image">Techlogistic</a>
+                    </div>
+                    <div class="navigation__toggle" id="navigation-toggle">
+                        <i class='bx bx-menu'></i>
+                    </div>
+                </nav>
+            </header>
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h4 class="title">Iniciar sesión</h3>
+                    </div>
+                    <div class="col-sm d-flex justify-content-center align-items-center">
 
-                    <form method="post" action="login.jsp">
-                        <div class="mb-3">
-                            <label>Correo</label>
-                            <input type="text" class="form-control" name="correo" placeholder="Ingrese su correo">
-                            </input>
-                        </div>
-                        <div class="mb-3">
-                            <label>Password</label>
-                            <input type="password" class="form-control" name="password" placeholder="Ingrese su contraseña">
-                            </input>
-                        </div>
-                        <button type="submit" class="btn btn-success" name="login">Iniciar Sesión</button>
-                    </form>
+                        <form method="post" action="login.jsp">
+                            <div class="mb-3">
+                                <label>Correo</label>
+                                <input type="text" class="form-control" name="correo" placeholder="Ingrese su correo">
+                                </input>
+                            </div>
+                            <div class="mb-3">
+                                <label>Password</label>
+                                <input type="password" class="form-control" name="password" placeholder="Ingrese su contraseña">
+                                </input>
+                            </div>
+                            <button type="submit" class="btn btn-success" name="login">Iniciar Sesión</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
     </body>
     <%
 
@@ -73,17 +75,22 @@
                 out.println("<p style='color:red;'>Correo o contraseña incorrectos</p>");
             } catch (Exception e) {
                 out.print("Error: " + e.getMessage());
+            } finally {
+                // Cerrando los recursos
+                try {
+                    if (rs != null) {
+                        rs.close();
+                    }
+                    if (st != null) {
+                        st.close();
+                    }
+                    if (con != null) {
+                        con.close();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
-            finally {
-            // Cerrando los recursos
-            try {
-                if (rs != null) rs.close();
-                if (st != null) st.close();
-                if (con != null) con.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
         }
 
         /*
@@ -104,13 +111,14 @@
         } catch (Exception e) {
         }*/
     %>
-    <footer>
-    <div class="copyright">
-        <div class="bd-container">
-            <p>💙 © 2023 Techlogistic. Todos los derechos reservados. 💚</p>
-            <p><a href="./terminos-y-condiciones.html">Términos y Condiciones</a> · <a
-                    href="./politica-de-privacidad.html">Política de Privacidad</a></p>
+    <footer  class="footer_nuevo">
+        <div class="copyright">
+            <div class="bd-container">
+                <p>💙 © 2023 Techlogistic. Todos los derechos reservados. 💚</p>
+                <p><a href="./terminos-y-condiciones.html">Términos y Condiciones</a> · <a
+                        href="./politica-de-privacidad.html">Política de Privacidad</a></p>
+            </div>
         </div>
-    </div>
     </footer>
+</div>
 </html>

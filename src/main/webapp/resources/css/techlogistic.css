@@ -201,6 +201,7 @@ img {
 .navigation__link, .navigation__logo, .navigation__toggle {
   color: var(--text-color);
   font-weight: var(--font-medium);
+  margin: 10px;
 }
 .navigation__logo:hover {
   color: var(--first-color);
@@ -852,8 +853,10 @@ a.button {
     height: calc(var(--header-height) + 1.5rem);
   }
   .navigation__list {
+    list-style: none; 
     display: flex;
     align-items: center;
+    margin: 10px;
   }
   .navigation__item {
     margin-left: var(--m-2);
