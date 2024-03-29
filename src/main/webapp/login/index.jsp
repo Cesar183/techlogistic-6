@@ -28,7 +28,7 @@
                 <div class="container-fluid">
                     <a class="navbar-brand"><img src="/techlogistic/resources/favicon.png" alt="" class="navigation__image" width="40">Techlogistic</a>
                     <form class="form-inline" action="logout.jsp">
-                        <a href="datosUsuario.jsp"><i class="fa-solid fa-user"></i><%=sesion.getAttribute("correo")%></a>
+                        <a href="#"><i class="fa-solid fa-user"></i><%=sesion.getAttribute("correo")%></a>
                         <button class="btn btn-outline-danger my-2 my-sm-0 ml-2" type="submit">Cerrar Sesión</button>
                     </form>
                 </div>
