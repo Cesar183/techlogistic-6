@@ -42,30 +42,6 @@
                     <li><a href="/techlogistic/subirdatos/cargararchivo.xhtml" class="navigation__link">Subir datos</a></li>
                 </ul>
             </div>
-            <div class="row mt-2">
-                <div class="col-sm">
-
-                    <p><a href="/techlogistic/web/categoriaMateria/List.xhtml">Show All CategoriaMateria Items</a></p>
-                    <p><a href="/techlogistic/web/cliente/List.xhtml">Show All cliente Items</a></p>
-                    <p><a href="/techlogistic/web/correos/List.xhtml">Show All correos Items</a></p>
-                    <p><a href="/techlogistic/web/cotizaciones/List.xhtml">Show All cotizaciones Items</a></p>
-                    <p><a href="/techlogistic/web/direcciones/List.xhtml">Show All direcciones Items</a></p>
-                    <p><a href="/techlogistic/web/funcionario/List.xhtml">Show All funcionario Items</a></p>
-                    <p><a href="/techlogistic/web/materiaPrima/List.xhtml">Show All materiaPrima Items</a></p>
-                    <p><a href="/techlogistic/web/materiaProducto/List.xhtml">Show All materiaProducto Items</a></p>
-                    <p><a href="/techlogistic/web/medioPago/List.xhtml">Show All medioPago Items</a></p>
-                    <p><a href="/techlogistic/web/ordenVenta/List.xhtml">Show All ordenVenta Items</a></p>
-                    <p><a href="/techlogistic/web/ordenVentaProducto/List.xhtml">Show All ordenVentaProducto Items</a></p>
-                    <p><a href="/techlogistic/web/pedidos/List.xhtml">Show All pedidos Items</a></p>
-                    <p><a href="/techlogistic/web/personas/List.xhtml">Show All personas Items</a></p>
-                    <p><a href="/techlogistic/web/producto/List.xhtml">Show All producto Items</a></p>
-                    <p><a href="/techlogistic/web/proveedorMateria/List.xhtml">Show All proveedorMateria Items</a></p>
-                    <p><a href="/techlogistic/web/proveedores/List.xhtml">Show All proveedores Items</a></p>
-                    <p><a href="/techlogistic/web/roles/List.xhtml">Show All roles Items</a></p>
-                    <p><a href="/techlogistic/web/stock/List.xhtml">Show All stock Items</a></p>
-                    <p><a href="/techlogistic/web/categoriaMateria/List.xhtml">Show All CategoriaMateria Items</a></p>
-                </div>
-            </div>
         </div>
         <main class="container my-5 h-100">
             <h4 class="text-md-start text-left">Bienvenida/o a Techlogistic</h4>

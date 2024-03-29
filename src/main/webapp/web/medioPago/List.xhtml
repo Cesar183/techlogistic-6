@@ -36,16 +36,16 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{medioPagoController.prepareView}" value="#{bundle.ListMedioPagoViewLink}"/>
+                            <h:commandLink action="#{medioPagoController.prepareView}" value="#{bundle.ListMedioPagoViewLink}" class="navegacionVer"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{medioPagoController.prepareEdit}" value="#{bundle.ListMedioPagoEditLink}"/>
+                            <h:commandLink action="#{medioPagoController.prepareEdit}" value="#{bundle.ListMedioPagoEditLink}" class="navegacionEditar"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{medioPagoController.destroy}" value="#{bundle.ListMedioPagoDestroyLink}"/>
+                            <h:commandLink action="#{medioPagoController.destroy}" value="#{bundle.ListMedioPagoDestroyLink}" class="navegacionEliminar"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{medioPagoController.prepareCreate}" value="#{bundle.ListMedioPagoCreateLink}"/>
+                <h:commandLink action="#{medioPagoController.prepareCreate}" value="#{bundle.ListMedioPagoCreateLink}" class="navigation__link"/>
             </h:form>
         </ui:define>
     </ui:composition>

@@ -21,13 +21,8 @@
                     <h:inputText id="descripcionPago" value="#{medioPagoController.selected.descripcionPago}" title="#{bundle.CreateMedioPagoTitle_descripcionPago}" required="true" requiredMessage="#{bundle.CreateMedioPagoRequiredMessage_descripcionPago}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{medioPagoController.create}" value="#{bundle.CreateMedioPagoSaveLink}" />
-                <br />
-                <br />
-                <h:commandLink action="#{medioPagoController.prepareList}" value="#{bundle.CreateMedioPagoShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreateMedioPagoIndexLink}"/>
+                <h:commandLink action="#{medioPagoController.create}" value="#{bundle.CreateMedioPagoSaveLink}" class="navegacionVer"/>
+                <h:commandLink action="#{medioPagoController.prepareList}" value="#{bundle.CreateMedioPagoShowAllLink}" immediate="true" class="navigation__link"/>
             </h:form>
         </ui:define>
     </ui:composition>

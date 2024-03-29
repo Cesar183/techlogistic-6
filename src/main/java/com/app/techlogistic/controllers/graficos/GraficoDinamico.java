@@ -34,7 +34,7 @@ public class GraficoDinamico implements Serializable {
             torta.setLegendPosition("e");
             //torta.setFill(true);
             torta.setShowDataLabels(true);
-            torta.setDiameter(400);
+            torta.setDiameter(200);
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
@@ -75,7 +75,7 @@ public class GraficoDinamico implements Serializable {
         torta.setLegendPosition("e");
         torta.setFill(true);
         torta.setShowDataLabels(true);
-        torta.setDiameter(400);
+        torta.setDiameter(200);
     }
     
 }

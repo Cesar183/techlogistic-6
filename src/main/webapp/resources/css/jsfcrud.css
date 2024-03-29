@@ -267,3 +267,14 @@ tr.jsfcrud_even_row {
   flex-direction: column;
   min-height: 100vh;
 }
+.input-text {
+    width: 400px;
+}
+
+.input-textarea {
+    width: 400px;
+    height: 200px;
+}
+.ui-fileupload-upload{
+    
+}
