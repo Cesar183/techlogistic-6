@@ -39,13 +39,8 @@
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{cotizacionesController.create}" value="#{bundle.CreateCotizacionesSaveLink}" />
-                <br />
-                <br />
-                <h:commandLink action="#{cotizacionesController.prepareList}" value="#{bundle.CreateCotizacionesShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreateCotizacionesIndexLink}"/>
+                <h:commandLink action="#{cotizacionesController.create}" value="#{bundle.CreateCotizacionesSaveLink}" class="navegacionVer"/>
+                <h:commandLink action="#{cotizacionesController.prepareList}" value="#{bundle.CreateCotizacionesShowAllLink}" immediate="true" class="navigation__link"/>
             </h:form>
         </ui:define>
     </ui:composition>

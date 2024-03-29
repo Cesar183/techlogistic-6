@@ -35,13 +35,8 @@
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{pedidosController.create}" value="#{bundle.CreatePedidosSaveLink}" />
-                <br />
-                <br />
-                <h:commandLink action="#{pedidosController.prepareList}" value="#{bundle.CreatePedidosShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreatePedidosIndexLink}"/>
+                <h:commandLink action="#{pedidosController.create}" value="#{bundle.CreatePedidosSaveLink}"  class="navegacionVer"/>
+                <h:commandLink action="#{pedidosController.prepareList}" value="#{bundle.CreatePedidosShowAllLink}" immediate="true" class="navigation__link"/>
             </h:form>
         </ui:define>
     </ui:composition>

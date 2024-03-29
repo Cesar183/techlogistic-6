@@ -78,19 +78,17 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{productoController.prepareView}" value="#{bundle.ListProductoViewLink}"/>
+                            <h:commandLink action="#{productoController.prepareView}" value="#{bundle.ListProductoViewLink}" class="navegacionVer"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{productoController.prepareEdit}" value="#{bundle.ListProductoEditLink}"/>
+                            <h:commandLink action="#{productoController.prepareEdit}" value="#{bundle.ListProductoEditLink}" class="navegacionEditar"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{productoController.destroy}" value="#{bundle.ListProductoDestroyLink}"/>
+                            <h:commandLink action="#{productoController.destroy}" value="#{bundle.ListProductoDestroyLink}" class="navegacionEliminar"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{productoController.prepareCreate}" value="#{bundle.ListProductoCreateLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ListProductoIndexLink}"/>
+                <h:commandLink action="#{productoController.prepareCreate}" value="#{bundle.ListProductoCreateLink}" class="navigation__link"/>
+                <a href="/techlogistic/web/stock/List.xhtml" class="navigation__link">Stock</a>
             </h:form>
         </ui:define>
     </ui:composition>

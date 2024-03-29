@@ -27,13 +27,10 @@
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{proveedoresController.create}" value="#{bundle.CreateProveedoresSaveLink}" />
+                <h:commandLink action="#{proveedoresController.create}" value="#{bundle.CreateProveedoresSaveLink}" class="navegacionVer"/>
+                <h:commandLink action="#{proveedoresController.prepareList}" value="#{bundle.CreateProveedoresShowAllLink}" immediate="true" class="navigation__link"/>
                 <br />
                 <br />
-                <h:commandLink action="#{proveedoresController.prepareList}" value="#{bundle.CreateProveedoresShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreateProveedoresIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

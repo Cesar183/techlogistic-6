@@ -54,19 +54,16 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{stockController.prepareView}" value="#{bundle.ListStockViewLink}"/>
+                            <h:commandLink action="#{stockController.prepareView}" value="#{bundle.ListStockViewLink}" class="navegacionVer"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{stockController.prepareEdit}" value="#{bundle.ListStockEditLink}"/>
+                            <h:commandLink action="#{stockController.prepareEdit}" value="#{bundle.ListStockEditLink}" class="navegacionEditar"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{stockController.destroy}" value="#{bundle.ListStockDestroyLink}"/>
+                            <h:commandLink action="#{stockController.destroy}" value="#{bundle.ListStockDestroyLink}" class="navegacionEliminar"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{stockController.prepareCreate}" value="#{bundle.ListStockCreateLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ListStockIndexLink}"/>
+                <h:commandLink action="#{stockController.prepareCreate}" value="#{bundle.ListStockCreateLink}" class="navigation__link"/>
             </h:form>
         </ui:define>
     </ui:composition>

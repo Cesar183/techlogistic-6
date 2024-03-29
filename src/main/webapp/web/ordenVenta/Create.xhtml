@@ -45,13 +45,8 @@
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{ordenVentaController.create}" value="#{bundle.CreateOrdenVentaSaveLink}" />
-                <br />
-                <br />
-                <h:commandLink action="#{ordenVentaController.prepareList}" value="#{bundle.CreateOrdenVentaShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreateOrdenVentaIndexLink}"/>
+                <h:commandLink action="#{ordenVentaController.create}" value="#{bundle.CreateOrdenVentaSaveLink}" class="navegacionVer"/>
+                <h:commandLink action="#{ordenVentaController.prepareList}" value="#{bundle.CreateOrdenVentaShowAllLink}" immediate="true" class="navigation__link"/>
             </h:form>
         </ui:define>
     </ui:composition>

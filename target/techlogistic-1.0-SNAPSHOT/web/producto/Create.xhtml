@@ -37,13 +37,8 @@
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{productoController.create}" value="#{bundle.CreateProductoSaveLink}" />
-                <br />
-                <br />
-                <h:commandLink action="#{productoController.prepareList}" value="#{bundle.CreateProductoShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreateProductoIndexLink}"/>
+                <h:commandLink action="#{productoController.create}" value="#{bundle.CreateProductoSaveLink}" class="navegacionVer"/>
+                <h:commandLink action="#{productoController.prepareList}" value="#{bundle.CreateProductoShowAllLink}" immediate="true" class="navigation__link"/>
             </h:form>
         </ui:define>
     </ui:composition>

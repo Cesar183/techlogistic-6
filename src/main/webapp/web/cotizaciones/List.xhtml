@@ -74,19 +74,17 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{cotizacionesController.prepareView}" value="#{bundle.ListCotizacionesViewLink}"/>
+                            <h:commandLink action="#{cotizacionesController.prepareView}" value="#{bundle.ListCotizacionesViewLink}" class="navegacionVer"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{cotizacionesController.prepareEdit}" value="#{bundle.ListCotizacionesEditLink}"/>
+                            <h:commandLink action="#{cotizacionesController.prepareEdit}" value="#{bundle.ListCotizacionesEditLink}" class="navegacionEditar"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{cotizacionesController.destroy}" value="#{bundle.ListCotizacionesDestroyLink}"/>
+                            <h:commandLink action="#{cotizacionesController.destroy}" value="#{bundle.ListCotizacionesDestroyLink}" class="navegacionEliminar"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{cotizacionesController.prepareCreate}" value="#{bundle.ListCotizacionesCreateLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ListCotizacionesIndexLink}"/>
+                <h:commandLink action="#{cotizacionesController.prepareCreate}" value="#{bundle.ListCotizacionesCreateLink}" class="navigation__link"/>
+                <h:link outcome="/index" value="#{bundle.ListCotizacionesIndexLink}" class="navigation__link"/>
             </h:form>
         </ui:define>
     </ui:composition>

@@ -29,13 +29,8 @@
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{stockController.create}" value="#{bundle.CreateStockSaveLink}" />
-                <br />
-                <br />
-                <h:commandLink action="#{stockController.prepareList}" value="#{bundle.CreateStockShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreateStockIndexLink}"/>
+                <h:commandLink action="#{stockController.create}" value="#{bundle.CreateStockSaveLink}" class="navegacionVer"/>
+                <h:commandLink action="#{stockController.prepareList}" value="#{bundle.CreateStockShowAllLink}" immediate="true" class="navigation__link"/>
             </h:form>
         </ui:define>
     </ui:composition>

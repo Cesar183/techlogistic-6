@@ -39,13 +39,9 @@
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{materiaPrimaController.create}" value="#{bundle.CreateMateriaPrimaSaveLink}" />
-                <br />
-                <br />
-                <h:commandLink action="#{materiaPrimaController.prepareList}" value="#{bundle.CreateMateriaPrimaShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreateMateriaPrimaIndexLink}"/>
+                <h:commandLink action="#{materiaPrimaController.create}" value="#{bundle.CreateMateriaPrimaSaveLink}" class="navegacionVer"/>
+                <h:commandLink action="#{materiaPrimaController.prepareList}" value="#{bundle.CreateMateriaPrimaShowAllLink}" immediate="true" class="navigation__link"/>
+
             </h:form>
         </ui:define>
     </ui:composition>
