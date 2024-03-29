@@ -48,16 +48,16 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{correosController.prepareView}" value="#{bundle.ListCorreosViewLink}"/>
+                            <h:commandLink action="#{correosController.prepareView}" value="#{bundle.ListCorreosViewLink}" class="navegacionVer"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{correosController.prepareEdit}" value="#{bundle.ListCorreosEditLink}"/>
+                            <h:commandLink action="#{correosController.prepareEdit}" value="#{bundle.ListCorreosEditLink}" class="navegacionEditar"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{correosController.destroy}" value="#{bundle.ListCorreosDestroyLink}"/>
+                            <h:commandLink action="#{correosController.destroy}" value="#{bundle.ListCorreosDestroyLink}" class="navegacionEliminar"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{correosController.prepareCreate}" value="#{bundle.ListCorreosCreateLink}"/>
+                <h:commandLink action="#{correosController.prepareCreate}" value="#{bundle.ListCorreosCreateLink}" class="navigation__link"/>
             </h:form>
         </ui:define>
     </ui:composition>

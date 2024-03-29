@@ -31,13 +31,8 @@
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{clienteController.create}" value="#{bundle.CreateClienteSaveLink}" />
-                <br />
-                <br />
-                <h:commandLink action="#{clienteController.prepareList}" value="#{bundle.CreateClienteShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreateClienteIndexLink}"/>
+                <h:commandLink action="#{clienteController.create}" value="#{bundle.CreateClienteSaveLink}" class="navegacionVer"/>
+                <h:commandLink action="#{clienteController.prepareList}" value="#{bundle.CreateClienteShowAllLink}" immediate="true" class="navigation__link"/>
             </h:form>
         </ui:define>
     </ui:composition>

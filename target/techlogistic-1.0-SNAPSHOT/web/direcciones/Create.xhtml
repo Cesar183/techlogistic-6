@@ -39,13 +39,8 @@
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{direccionesController.create}" value="#{bundle.CreateDireccionesSaveLink}" />
-                <br />
-                <br />
-                <h:commandLink action="#{direccionesController.prepareList}" value="#{bundle.CreateDireccionesShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreateDireccionesIndexLink}"/>
+                <h:commandLink action="#{direccionesController.create}" value="#{bundle.CreateDireccionesSaveLink}" class="navegacionVer"/>
+                <h:commandLink action="#{direccionesController.prepareList}" value="#{bundle.CreateDireccionesShowAllLink}" immediate="true" class="navigation__link"/>
             </h:form>
         </ui:define>
     </ui:composition>

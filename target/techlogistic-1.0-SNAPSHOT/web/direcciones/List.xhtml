@@ -84,16 +84,16 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{direccionesController.prepareView}" value="#{bundle.ListDireccionesViewLink}"/>
+                            <h:commandLink action="#{direccionesController.prepareView}" value="#{bundle.ListDireccionesViewLink}" class="navegacionVer"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{direccionesController.prepareEdit}" value="#{bundle.ListDireccionesEditLink}"/>
+                            <h:commandLink action="#{direccionesController.prepareEdit}" value="#{bundle.ListDireccionesEditLink}" class="navegacionEditar"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{direccionesController.destroy}" value="#{bundle.ListDireccionesDestroyLink}"/>
+                            <h:commandLink action="#{direccionesController.destroy}" value="#{bundle.ListDireccionesDestroyLink}" class="navegacionEliminar"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{direccionesController.prepareCreate}" value="#{bundle.ListDireccionesCreateLink}"/>
+                <h:commandLink action="#{direccionesController.prepareCreate}" value="#{bundle.ListDireccionesCreateLink}" class="navigation__link"/>
             </h:form>
         </ui:define>
     </ui:composition>

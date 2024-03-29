@@ -36,16 +36,16 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{rolesController.prepareView}" value="#{bundle.ListRolesViewLink}"/>
+                            <h:commandLink action="#{rolesController.prepareView}" value="#{bundle.ListRolesViewLink}" class="navegacionVer"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{rolesController.prepareEdit}" value="#{bundle.ListRolesEditLink}"/>
+                            <h:commandLink action="#{rolesController.prepareEdit}" value="#{bundle.ListRolesEditLink}" class="navegacionEditar"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{rolesController.destroy}" value="#{bundle.ListRolesDestroyLink}"/>
+                            <h:commandLink action="#{rolesController.destroy}" value="#{bundle.ListRolesDestroyLink}" class="navegacionEliminar"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{rolesController.prepareCreate}" value="#{bundle.ListRolesCreateLink}"/>
+                <h:commandLink action="#{rolesController.prepareCreate}" value="#{bundle.ListRolesCreateLink}" class="navigation__link"/>
             </h:form>
         </ui:define>
     </ui:composition>

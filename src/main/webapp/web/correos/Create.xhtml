@@ -27,13 +27,8 @@
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{correosController.create}" value="#{bundle.CreateCorreosSaveLink}" />
-                <br />
-                <br />
-                <h:commandLink action="#{correosController.prepareList}" value="#{bundle.CreateCorreosShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreateCorreosIndexLink}"/>
+                <h:commandLink action="#{correosController.create}" value="#{bundle.CreateCorreosSaveLink}" class="navegacionVer"/>
+                <h:commandLink action="#{correosController.prepareList}" value="#{bundle.CreateCorreosShowAllLink}" immediate="true" class="navigation__link"/>
             </h:form>
         </ui:define>
     </ui:composition>

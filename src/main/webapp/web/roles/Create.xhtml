@@ -21,13 +21,9 @@
                     <h:inputText id="descripcionRol" value="#{rolesController.selected.descripcionRol}" title="#{bundle.CreateRolesTitle_descripcionRol}" required="true" requiredMessage="#{bundle.CreateRolesRequiredMessage_descripcionRol}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{rolesController.create}" value="#{bundle.CreateRolesSaveLink}" />
-                <br />
-                <br />
-                <h:commandLink action="#{rolesController.prepareList}" value="#{bundle.CreateRolesShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreateRolesIndexLink}"/>
+                <h:commandLink action="#{rolesController.create}" value="#{bundle.CreateRolesSaveLink}" class="navegacionVer"/>
+                <h:commandLink action="#{rolesController.prepareList}" value="#{bundle.CreateRolesShowAllLink}" immediate="true" class="navigation__link"/>
+
             </h:form>
         </ui:define>
     </ui:composition>
