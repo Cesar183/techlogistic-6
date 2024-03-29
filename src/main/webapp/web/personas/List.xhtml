@@ -60,19 +60,16 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{personasController.prepareView}" value="#{bundle.ListPersonasViewLink}"/>
+                            <h:commandLink action="#{personasController.prepareView}" value="#{bundle.ListPersonasViewLink}" class="navegacionVer"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{personasController.prepareEdit}" value="#{bundle.ListPersonasEditLink}"/>
+                            <h:commandLink action="#{personasController.prepareEdit}" value="#{bundle.ListPersonasEditLink}" class="navegacionEditar"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{personasController.destroy}" value="#{bundle.ListPersonasDestroyLink}"/>
+                            <h:commandLink action="#{personasController.destroy}" value="#{bundle.ListPersonasDestroyLink}" class="navegacionEliminar"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{personasController.prepareCreate}" value="#{bundle.ListPersonasCreateLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ListPersonasIndexLink}"/>
+                <h:commandLink action="#{personasController.prepareCreate}" value="#{bundle.ListPersonasCreateLink}" class="navigation__link"/>
             </h:form>
         </ui:define>
     </ui:composition>

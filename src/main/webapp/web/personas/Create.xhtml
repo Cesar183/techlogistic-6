@@ -29,13 +29,8 @@
                     <h:inputText id="segundoApellido" value="#{personasController.selected.segundoApellido}" title="#{bundle.CreatePersonasTitle_segundoApellido}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{personasController.create}" value="#{bundle.CreatePersonasSaveLink}" />
-                <br />
-                <br />
-                <h:commandLink action="#{personasController.prepareList}" value="#{bundle.CreatePersonasShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreatePersonasIndexLink}"/>
+                <h:commandLink action="#{personasController.create}" value="#{bundle.CreatePersonasSaveLink}" class="navegacionVer"/>
+                <h:commandLink action="#{personasController.prepareList}" value="#{bundle.CreatePersonasShowAllLink}" immediate="true" class="navigation__link"/>
             </h:form>
         </ui:define>
     </ui:composition>

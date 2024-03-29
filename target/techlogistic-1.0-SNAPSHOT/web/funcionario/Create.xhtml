@@ -31,13 +31,9 @@
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{funcionarioController.create}" value="#{bundle.CreateFuncionarioSaveLink}" />
-                <br />
-                <br />
-                <h:commandLink action="#{funcionarioController.prepareList}" value="#{bundle.CreateFuncionarioShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreateFuncionarioIndexLink}"/>
+                <h:commandLink action="#{funcionarioController.create}" value="#{bundle.CreateFuncionarioSaveLink}" class="navegacionVer"/>
+                <h:commandLink action="#{funcionarioController.prepareList}" value="#{bundle.CreateFuncionarioShowAllLink}" immediate="true" class="navigation__link"/>
+
             </h:form>
         </ui:define>
     </ui:composition>

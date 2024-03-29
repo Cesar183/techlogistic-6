@@ -54,19 +54,17 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{funcionarioController.prepareView}" value="#{bundle.ListFuncionarioViewLink}"/>
+                            <h:commandLink action="#{funcionarioController.prepareView}" value="#{bundle.ListFuncionarioViewLink}" class="navegacionVer"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{funcionarioController.prepareEdit}" value="#{bundle.ListFuncionarioEditLink}"/>
+                            <h:commandLink action="#{funcionarioController.prepareEdit}" value="#{bundle.ListFuncionarioEditLink}" class="navegacionEditar"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{funcionarioController.destroy}" value="#{bundle.ListFuncionarioDestroyLink}"/>
+                            <h:commandLink action="#{funcionarioController.destroy}" value="#{bundle.ListFuncionarioDestroyLink}" class="navegacionEliminar"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{funcionarioController.prepareCreate}" value="#{bundle.ListFuncionarioCreateLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ListFuncionarioIndexLink}"/>
+                <h:commandLink action="#{funcionarioController.prepareCreate}" value="#{bundle.ListFuncionarioCreateLink}" class="navigation__link"/>
+                <a href="/techlogistic/web/personas/List.xhtml" class="navigation__link">Personas</a>
             </h:form>
         </ui:define>
     </ui:composition>
