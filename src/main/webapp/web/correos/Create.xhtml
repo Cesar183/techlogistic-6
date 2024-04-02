@@ -15,10 +15,12 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateCorreosLabel_idCorreo}" for="idCorreo" />
-                    <h:inputText id="idCorreo" value="#{correosController.selected.idCorreo}" title="#{bundle.CreateCorreosTitle_idCorreo}" required="true" requiredMessage="#{bundle.CreateCorreosRequiredMessage_idCorreo}"/>
+                    <h:outputLabel value="#{bundle.CreateCorreosLabel_idCorreo}" for="idCorreo" style="display: none;"/>
+                    <h:inputText id="idCorreo" value="#{correosController.selected.idCorreo}" title="#{bundle.CreateCorreosTitle_idCorreo}" requiredMessage="#{bundle.CreateCorreosRequiredMessage_idCorreo}" style="display: none;"/>
                     <h:outputLabel value="#{bundle.CreateCorreosLabel_correo}" for="correo" />
-                    <h:inputText id="correo" value="#{correosController.selected.correo}" title="#{bundle.CreateCorreosTitle_correo}" required="true" requiredMessage="#{bundle.CreateCorreosRequiredMessage_correo}"/>
+                    <h:inputText id="correo" value="#{correosController.selected.correo}" title="#{bundle.CreateCorreosTitle_correo}" required="true" requiredMessage="#{bundle.CreateCorreosRequiredMessage_correo}">
+                         <f:validator validatorId="varlidarCorreo" />
+                    </h:inputText>
                     <h:outputLabel value="#{bundle.CreateCorreosLabel_password}" for="password" />
                     <h:inputText id="password" value="#{correosController.selected.password}" title="#{bundle.CreateCorreosTitle_password}" required="true" requiredMessage="#{bundle.CreateCorreosRequiredMessage_password}"/>
                     <h:outputLabel value="#{bundle.CreateCorreosLabel_idPersona}" for="idPersona" />

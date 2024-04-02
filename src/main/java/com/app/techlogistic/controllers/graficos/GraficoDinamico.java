@@ -71,7 +71,7 @@ public class GraficoDinamico implements Serializable {
             torta.set(item.getNombre(), item.getSumatoria());
             System.out.println("nombre: " + item.getNombre() + "suma: " + item.getSumatoria());
         }
-        torta.setTitle("Compras por mes");
+        torta.setTitle("Materia prima usada por mes");
         torta.setLegendPosition("e");
         torta.setFill(true);
         torta.setShowDataLabels(true);
