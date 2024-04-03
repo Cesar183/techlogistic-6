@@ -37,7 +37,7 @@
             <div class="container-fluid">
                 <ul class="navigation__list">
                     <li><a href="/techlogistic/web/funcionario/List.xhtml" class="navigation__link">Funcionarios</a></li>
-                    <li><a href="/techlogistic/correo/enviarcorreo.xhtml" class="navigation__link">Enviar correo</a></li>
+                    <!--<li><a href="/techlogistic/correo/enviarcorreo.xhtml" class="navigation__link">Enviar correo</a></li> -->
                     <li><a href="/techlogistic/grafico/grafico.xhtml" class="navigation__link">Gráfico compras</a></li>
                     <li><a href="/techlogistic/subirdatos/cargararchivo.xhtml" class="navigation__link">Subir datos</a></li>
                 </ul>
