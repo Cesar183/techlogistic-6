@@ -22,7 +22,9 @@
                          <f:validator validatorId="varlidarCorreo" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.CreateCorreosLabel_password}" for="password" />
-                    <h:inputText id="password" value="#{correosController.selected.password}" title="#{bundle.CreateCorreosTitle_password}" required="true" requiredMessage="#{bundle.CreateCorreosRequiredMessage_password}"/>
+                    <h:inputText id="password" value="#{correosController.selected.password}" title="#{bundle.CreateCorreosTitle_password}" required="true" requiredMessage="#{bundle.CreateCorreosRequiredMessage_password}">
+                        <f:validator validatorId="validarPassword" />
+                    </h:inputText>
                     <h:outputLabel value="#{bundle.CreateCorreosLabel_idPersona}" for="idPersona" />
                     <h:selectOneMenu id="idPersona" value="#{correosController.selected.idPersona}" title="#{bundle.CreateCorreosTitle_idPersona}" required="true" requiredMessage="#{bundle.CreateCorreosRequiredMessage_idPersona}">
                         <f:selectItems value="#{personasController.itemsAvailableSelectOne}"/>

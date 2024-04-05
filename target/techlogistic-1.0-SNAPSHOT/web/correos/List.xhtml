@@ -26,8 +26,13 @@
         </header>
         <main class="main_nuevo">
             <h1>
-                    <ui:insert name="title">Correos</ui:insert>
-                </h1>
+                <ui:insert name="title">Correos</ui:insert>
+            </h1>
+            <br />
+            <h:form styleClass="jsfcrud_list_form">
+                <h:commandLink action="#{correosController.prepareCreate}" value="#{bundle.ListCorreosCreateLink}" class="navigation__link"/>
+                <br /><br />
+            </h:form>
             <h:form styleClass="jsfcrud_list_form">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
@@ -77,10 +82,9 @@
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
-                <br />
-                <h:commandLink action="#{correosController.prepareCreate}" value="#{bundle.ListCorreosCreateLink}" class="navigation__link"/>
+
                 <br /><br />
-                
+
                 <h2 class="title" style="color: #017260">Enviar Correo Electrónico</h2><br />
                 <h:panelGrid columns="3" >
                     <h:outputLabel for="destinatario" style="display: none;">Destinatario:</h:outputLabel>

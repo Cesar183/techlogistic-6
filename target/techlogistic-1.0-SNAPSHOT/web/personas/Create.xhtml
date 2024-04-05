@@ -15,10 +15,12 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreatePersonasLabel_idPersona}" for="idPersona" />
-                    <h:inputText id="idPersona" value="#{personasController.selected.idPersona}" title="#{bundle.CreatePersonasTitle_idPersona}" required="true" requiredMessage="#{bundle.CreatePersonasRequiredMessage_idPersona}"/>
+                    <h:outputLabel value="#{bundle.CreatePersonasLabel_idPersona}" for="idPersona" style="display: none;"/>
+                    <h:inputText id="idPersona" value="#{personasController.selected.idPersona}" title="#{bundle.CreatePersonasTitle_idPersona}"  requiredMessage="#{bundle.CreatePersonasRequiredMessage_idPersona}" style="display: none;"/>
                     <h:outputLabel value="#{bundle.CreatePersonasLabel_noDocumento}" for="noDocumento" />
-                    <h:inputText id="noDocumento" value="#{personasController.selected.noDocumento}" title="#{bundle.CreatePersonasTitle_noDocumento}" required="true" requiredMessage="#{bundle.CreatePersonasRequiredMessage_noDocumento}"/>
+                    <h:inputText id="noDocumento" value="#{personasController.selected.noDocumento}" title="#{bundle.CreatePersonasTitle_noDocumento}" required="true" requiredMessage="#{bundle.CreatePersonasRequiredMessage_noDocumento}" validatorMessage="El número de documento debe tener entre 7 y 10 caracteres">
+                        <f:validateLength minimum="7" maximum="10"/>
+                    </h:inputText>
                     <h:outputLabel value="#{bundle.CreatePersonasLabel_primerNombre}" for="primerNombre" />
                     <h:inputText id="primerNombre" value="#{personasController.selected.primerNombre}" title="#{bundle.CreatePersonasTitle_primerNombre}" required="true" requiredMessage="#{bundle.CreatePersonasRequiredMessage_primerNombre}"/>
                     <h:outputLabel value="#{bundle.CreatePersonasLabel_segundoNombre}" for="segundoNombre" />
